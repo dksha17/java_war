@@ -59,9 +59,9 @@
 	</build>
 <distributionManagement>
     <repository>
-        <id>central</id>
-        <name>ip-172-31-32-139.us-east-2.compute.internal-releases</name>
-        <url>http://ec2-18-188-142-196.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release</url>
+        <id>release</id>
+        <name>releases</name>
+        <url>http://ec2-18-188-142-196.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release-local</url>
     </repository>
 </distributionManagement>
 </project>
