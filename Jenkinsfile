@@ -1,4 +1,3 @@
-def mvnHome = tool name: 'default', type: 'maven'
 pipeline {
   agent any
   environment {
@@ -17,6 +16,7 @@ pipeline {
     stage('Build') {
       steps{
         dir ("${env.WORKSPACE}"){
+          def mvnHome = tool name: 'default', type: 'maven'
           sh "${mvnHome}/bin/mvn clean package"
         }
       }
