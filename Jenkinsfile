@@ -1,4 +1,7 @@
 pipeline {
+  tools{
+  maven 'default'
+  }
   agent any
   environment {
     registry           = "deeksha17/java"
