@@ -16,7 +16,7 @@ pipeline {
     stage('Build') {
       steps{
         dir ("${env.WORKSPACE}"){
-          sh 'mvn -B clean package'
+          sh 'mvn  clean package'
         }
       }
     }
