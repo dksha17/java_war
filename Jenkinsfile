@@ -8,21 +8,21 @@ pipeline {
   stages {
     stage('Checkout code') {
       steps{
-        dir ("${env.WORKSPACE}/app"){
+        dir ("${env.WORKSPACE}"){
           git branch: "master", changelog: false, poll: false, url:'https://github.com/dksha17/java_war.git'
         }
       }
     }
     stage('Build') {
       steps{
-        dir ("${env.WORKSPACE}/app"){
+        dir ("${env.WORKSPACE}"){
           sh 'mvn -B clean package'
         }
       }
     }
     stage('publish to artifactory') {
             steps {
-                dir ("${env.WORKSPACE}/app"){
+                dir ("${env.WORKSPACE}"){
                    sh 'mvn clean install deploy:deploy -P release'
                 }  
             }
