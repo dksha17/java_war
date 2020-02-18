@@ -16,7 +16,7 @@ pipeline {
     stage('Build') {
       steps{
         dir ("${env.WORKSPACE}"){
-          sh 'mvn clean package'
+          sh 'mvn -B -DskipTests -Denv=dev clean package'
         }
       }
     }
