@@ -15,7 +15,9 @@ pipeline {
     }
     stage('Build') {
       steps{
-        sh 'mvn clean package'
+        dir ("${env.WORKSPACE}"){
+          sh 'mvn clean package'
+        }
       }
     }
     stage('publish to artifactory') {
