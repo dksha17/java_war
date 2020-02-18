@@ -15,10 +15,8 @@ pipeline {
     }
     stage('Build') {
       steps{
-        dir ("${env.WORKSPACE}"){
           def mvnHome = tool name: 'default', type: 'maven'
           sh "${mvnHome}/bin/mvn clean package"
-        }
       }
     }
     stage('publish to artifactory') {
