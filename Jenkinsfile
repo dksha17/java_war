@@ -18,14 +18,14 @@ pipeline {
     }
     stage('Build') {
       steps{
-        dir ("${env.WORKSPACE}"){
+        dir ("${env.WORKSPACE}/app"){
           sh 'mvn -B clean package'
         }
       }
     }
     stage('publish to artifactory') {
             steps {
-                dir ("${env.WORKSPACE}"){
+                dir ("${env.WORKSPACE}/app"){
                    sh 'mvn clean install deploy:deploy -P release'
                 }  
             }
