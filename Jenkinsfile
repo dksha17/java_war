@@ -1,13 +1,10 @@
 pipeline {
-  options {
-    ansiColor('xterm')
-  }   
+  agent any
   environment {
     registry           = "deeksha17/java"
     registryCredential = 'docker-hub'
     dockerImage        = ''
   }
-  agent any
   stages {
     stage('Checkout code') {
       steps{
