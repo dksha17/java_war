@@ -4,6 +4,7 @@ pipeline {
   }
   agent any
   parameters {
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
     choice(name: 'env', choices: ['dev', 'qa'], description: 'environment to be built')
     choice(name: 'snapshot', choices: ['snapshot', 'release'], description: 'snapshot to build')
     }
