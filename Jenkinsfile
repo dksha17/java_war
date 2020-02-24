@@ -16,7 +16,7 @@ pipeline {
     stage('Checkout code') {
       steps{
         dir ("${env.WORKSPACE}"){
-          git branch: ${BRANCH}, changelog: false, poll: false, url:'https://github.com/dksha17/java_war.git'
+          git branch: "${BRANCH}", changelog: false, poll: false, url:'https://github.com/dksha17/java_war.git'
         }
       }
     }
