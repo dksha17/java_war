@@ -3,6 +3,10 @@ pipeline {
   maven 'default'
   }
   agent any
+  parameters {
+    choice(name: 'env', choices: ['dev', 'qa'], description: 'environment to be built')
+    choice(name: 'snapshot', choices: ['snapshot', 'release'], description: 'snapshot to build')
+    }
   environment {
     registry           = "deeksha17/java"
     registryCredential = 'docker-hub'
@@ -19,14 +23,14 @@ pipeline {
     stage('Build') {
       steps{
         dir ("${env.WORKSPACE}"){
-          sh 'mvn -B -DskipTests -Denv=dev clean package'
+          sh 'mvn -B -DskipTests -Denv=${env} clean package'
         }
       }
     }
     stage('publish to artifactory') {
             steps {
                 dir ("${env.WORKSPACE}"){
-                   sh 'mvn clean install deploy:deploy -P release'
+                   sh 'mvn clean install deploy:deploy -P ${snapshot}'
                 }  
             }
         }
