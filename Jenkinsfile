@@ -5,7 +5,6 @@ pipeline {
   agent any
   parameters {
     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-    choice(name: 'env', choices: ['dev', 'qa'], description: 'environment to be built')
     choice(name: 'snapshot', choices: ['snapshot', 'release'], description: 'snapshot to build')
     }
   environment {
@@ -17,7 +16,7 @@ pipeline {
     stage('Checkout code') {
       steps{
         dir ("${env.WORKSPACE}"){
-          git branch: "master", changelog: false, poll: false, url:'https://github.com/dksha17/java_war.git'
+          git branch: ${BRANCH}, changelog: false, poll: false, url:'https://github.com/dksha17/java_war.git'
         }
       }
     }
