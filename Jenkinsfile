@@ -5,7 +5,7 @@ pipeline {
   agent any
   parameters {
     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-    choice(name: 'snapshot', choices: ['snapshot', 'release'], description: 'snapshot to build')
+    choice(name: 'snapshot', choices: ['snapshot', 'release', 'artifact'], description: 'snapshot to build')
     }
   environment {
     registry           = "deeksha17/java"
