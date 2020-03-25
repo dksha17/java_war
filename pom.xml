@@ -63,10 +63,10 @@
         <name>releases</name>
         <url>http://ec2-3-134-109-215.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release-local</url>
     </repository>
-    <repository>
+    <snapshotRepository>
         <id>snapshot</id>
         <name>snapshot</name>
         <url>http://ec2-3-134-109-215.us-east-2.compute.amazonaws.com:8040/artifactory/libs-snapshot-local</url>
-    </repository>	
+    </snapshotRepository>	
 </distributionManagement>
 </project>
