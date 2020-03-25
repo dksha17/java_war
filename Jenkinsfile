@@ -5,7 +5,7 @@ pipeline {
   agent any
   parameters {
     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-    choice(name: 'snapshot', choices: ['snapshot', 'release', 'artifact'], description: 'snapshot to build')
+    choice(name: 'version', choices: ['snapshot', 'release', 'artifact'], description: 'snapshot to build')
     }
   environment {
     registry           = "deeksha17/java"
@@ -30,7 +30,7 @@ pipeline {
     stage('publish to artifactory') {
             steps {
                 dir ("${env.WORKSPACE}"){
-                   sh 'mvn clean install deploy:deploy -P ${snapshot}'
+                   sh 'mvn clean install deploy:deploy -P ${version}'
                 }  
             }
         }
