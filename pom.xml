@@ -61,12 +61,12 @@
     <repository>
         <id>release</id>
         <name>releases</name>
-        <url>http://ec2-18-216-87-21.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release</url>
+        <url>http://ec2-3-136-161-235.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release</url>
     </repository>
     <snapshotRepository>
         <id>snapshot</id>
         <name>snapshot</name>
-        <url>http://ec2-18-216-87-21.us-east-2.compute.amazonaws.com:8040/artifactory/libs-snapshot</url>
+        <url>http://ec2-3-136-161-235.us-east-2.compute.amazonaws.com:8040/artifactory/libs-snapshot</url>
     </snapshotRepository>	
 </distributionManagement>
 <repositories>
@@ -76,12 +76,12 @@
       </snapshots>
       <id>release</id>
       <name>libs-release</name>
-      <url>http://ec2-18-216-87-21.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release</url>
+      <url>http://ec2-3-136-161-235.us-east-2.compute.amazonaws.com:8040/artifactory/libs-release</url>
    </repository>
    <repository>
       <id>snapshots</id>
       <name>libs-snapshot</name>
-      <url>http://ec2-18-216-87-21.us-east-2.compute.amazonaws.com:8040/artifactory/libs-snapshot</url>
+      <url>http://ec2-3-136-161-235.us-east-2.compute.amazonaws.com:8040/artifactory/libs-snapshot</url>
    </repository>
 </repositories>	
 </project>
