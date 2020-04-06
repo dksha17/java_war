@@ -4,14 +4,7 @@ os: linux
 files:
   - source: files/newpage.html
   - destination: /var/www/html
-
-permissions:
-  - object: /var/www/html
-    pattern: newpage.html
-    mode: 755
-    type:
-      - file
-
+  
 hooks:
   BeforeInstall:
     - location: scripts/webserver-stop.sh
